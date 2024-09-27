@@ -1,6 +1,5 @@
 from rest_framework import status, generics, mixins, viewsets
 from rest_framework.generics import get_object_or_404
-from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import HttpRequest
@@ -27,10 +26,10 @@ class ActorList(
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
 
-    def get(self, request: HttpRequest, *args, **kwargs)-> Response:
+    def get(self, request: HttpRequest, *args, **kwargs) -> Response:
         return self.list(request, *args, **kwargs)
 
-    def post(self, request: HttpRequest, *args, **kwargs)-> Response:
+    def post(self, request: HttpRequest, *args, **kwargs) -> Response:
         return self.create(request, *args, **kwargs)
 
 
