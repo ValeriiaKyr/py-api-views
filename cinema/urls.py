@@ -14,12 +14,12 @@ router = routers.DefaultRouter()
 router.register("movies", MovieViewSet)
 urlpatterns = [
     path("", include(router.urls)),
-    path("actor/", ActorList.as_view(), name="actor-list"),
-    path("actor/<int:pk>/", ActorDetail.as_view(), name="actor-detail"),
-    path("genre/", GenreList.as_view(), name="actor-list"),
-    path("genre/<int:pk>/", GenreDetail.as_view(), name="actor-detail"),
+    path("actors/", ActorList.as_view(), name="actor-list"),
+    path("actors/<int:pk>/", ActorDetail.as_view(), name="actor-detail"),
+    path("genres/", GenreList.as_view(), name="actor-list"),
+    path("genres/<int:pk>/", GenreDetail.as_view(), name="actor-detail"),
     path(
-        "cinema_hall/",
+        "cinema_halls/",
         CinemaHallViewSet.as_view(
             {
                 "get": "list", "post": "create"
@@ -28,7 +28,7 @@ urlpatterns = [
         name="cinema_hall-list"
     ),
     path(
-        "cinema_hall/<int:pk>/",
+        "cinema_halls/<int:pk>/",
         CinemaHallViewSet.as_view(
             {
                 "get": "retrieve",
