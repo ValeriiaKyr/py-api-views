@@ -12,7 +12,7 @@ from cinema.views import (
 
 router = routers.DefaultRouter()
 router.register("movies", MovieViewSet)
-router.register("cinema_hall", CinemaHallViewSet)
+router.register("cinema_halls", CinemaHallViewSet)
 urlpatterns = [
     path("", include(router.urls)),
     path("actors/", ActorList.as_view(), name="actor-list"),
