@@ -14,7 +14,7 @@ from cinema.serializers import (
 
 
 class MovieViewSet(viewsets.ModelViewSet):
-    queryset = Movie.objects.all()
+    queryset = Movie.objects.prefetch_related("genres", "actors")
     serializer_class = MovieSerializer
 
 
